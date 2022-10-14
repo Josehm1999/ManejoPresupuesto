@@ -46,9 +46,6 @@ builder.Services.AddAuthentication(options =>
     opciones.LoginPath = "/usuarios/login";
 });
 
-
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
