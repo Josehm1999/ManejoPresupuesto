@@ -8,9 +8,13 @@
     {
         <span >Hola, @User.Identity.Name</span>
           
-        <a class="hidden md:block p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight" asp-action="logout" asp-controller="usuarios">
-           Cerrar Sesión 
-        </a>
+      
+
+   <form  asp-action="logout" asp-controller="usuarios">
+                <button type="submit" class="hidden md:block p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">
+                    Cerrar Sesión
+                </button>
+            </form>
     }
     else
     {
