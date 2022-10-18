@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using ClosedXML.Excel;
 using FluentEmail.Core;
 using FluentEmail.Smtp;

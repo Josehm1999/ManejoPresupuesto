@@ -68,9 +68,9 @@
             let gastos = 0;
             const tipoOperacionesIngresos = 1;
 
-            const formateador = new Intl.NumberFormat('en-US', {
+            const formateador = new Intl.NumberFormat('en-PE', {
                 style: 'currency',
-                currency: 'USD'
+                currency: 'PEN'
             });
 
             const filas = json.map(transaccion => {
