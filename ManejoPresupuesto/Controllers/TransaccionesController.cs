@@ -1,11 +1,15 @@
 ﻿using AutoMapper;
 using ClosedXML.Excel;
+using FluentEmail.Core;
+using FluentEmail.Smtp;
 using ManejoPresupuesto.Models;
 using ManejoPresupuesto.Servicios;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Data;
+using System.Net;
+using System.Net.Mail;
+using Attachment = FluentEmail.Core.Models.Attachment;
 
 namespace ManejoPresupuesto.Controllers
 {
@@ -15,6 +19,7 @@ namespace ManejoPresupuesto.Controllers
         private readonly IRepositorioCuentas repositorioCuentas;
         private readonly IRepositorioCategorias repositorioCategorias;
         private readonly IRepositorioTransacciones repositorioTransacciones;
+        private readonly IRepositorioUsuarios repositorioUsuarios;
         private readonly IMapper mapper;
         private readonly IServicioReportes servicioReportes;
 
@@ -170,7 +175,7 @@ namespace ManejoPresupuesto.Controllers
                 });
 
             var nombreArchivo = $"Manejo Presupuesto - {fechaInicio.ToString("MMM yyyy")}.xlsx";
-            return GenerarExcel(nombreArchivo, transacciones);
+            return await GenerarExcelAsync(nombreArchivo, transacciones);
         }
 
         [HttpGet]
@@ -189,7 +194,7 @@ namespace ManejoPresupuesto.Controllers
                 });
 
             var nombreArchivo = $"Manejo Presupuesto - {fechaInicio.ToString("yyyy")}.xlsx";
-            return GenerarExcel(nombreArchivo, transacciones);
+            return await GenerarExcelAsync(nombreArchivo, transacciones);
         }
 
         [HttpGet]
@@ -208,10 +213,11 @@ namespace ManejoPresupuesto.Controllers
                });
 
             var nombreArchivo = $"Manejo Presupuestos - {DateTime.Today.ToString("dd-MM-yyyy")}.xlsx";
-            return GenerarExcel(nombreArchivo, transacciones);
+            var archivoExcel = GenerarExcelAsync(nombreArchivo, transacciones);
+            return await GenerarExcelAsync(nombreArchivo, transacciones);
         }
 
-        private FileResult GenerarExcel(string nombreArchivo,
+        private async Task<FileResult> GenerarExcelAsync(string nombreArchivo,
             IEnumerable<Transaccion> transacciones)
         {
             DataTable dataTable = new DataTable("Transacciones");
@@ -241,11 +247,44 @@ namespace ManejoPresupuesto.Controllers
                 using (MemoryStream stream = new MemoryStream())
                 {
                     wb.SaveAs(stream);
+                    await EnviarReportePorCorreo(stream, nombreArchivo);
                     return File(stream.ToArray(),
                         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                         nombreArchivo);
                 }
             }
+        }
+
+        public async Task EnviarReportePorCorreo(Stream fileResult, string nombreArchivo)
+        {
+
+            string usuarioEmail = servicioUsuarios.ObtenerUsuarioEmail();
+            
+            var archivoAdjunto = new Attachment
+            {
+                Data = fileResult,
+                Filename = nombreArchivo,
+                ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            };
+
+            var sender = new SmtpSender(() => new SmtpClient("smtp.gmail.com")
+            {
+                UseDefaultCredentials = false,
+                Port =  587,
+                EnableSsl = true,
+                Credentials = new NetworkCredential("josehm1999@gmail.com", "qcivoqibfaucixiw")
+                // DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory,
+                // PickupDirectoryLocation = @"/home/jjhm/Desktop/jjhm"
+            });
+
+            Email.DefaultSender = sender;
+            var email = await Email
+                .From("josehm1999@gmail.com")
+                .To(usuarioEmail, "Usuario")
+                .Subject("Tu reporte esta listo!")
+                .Body("Un paso a la vez para una mejor gestión financiera.")
+                .Attach(archivoAdjunto)
+                .SendAsync();
         }
 
         public IActionResult Calendario()
@@ -457,6 +496,6 @@ namespace ManejoPresupuesto.Controllers
             return Ok(categorias);
         }
 
-        
+
     }
 }

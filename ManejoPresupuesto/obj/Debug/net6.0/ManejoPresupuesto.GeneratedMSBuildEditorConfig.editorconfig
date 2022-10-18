@@ -1,0 +1,160 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ManejoPresupuesto
+build_property.RootNamespace = ManejoPresupuesto
+build_property.ProjectDir = /home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Categorias/Borrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcmlhcy9Cb3JyYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Categorias/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcmlhcy9DcmVhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Categorias/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcmlhcy9FZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Categorias/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcmlhcy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Cuentas/Borrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VlbnRhcy9Cb3JyYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Cuentas/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VlbnRhcy9DcmVhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Cuentas/Detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VlbnRhcy9EZXRhbGxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Cuentas/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VlbnRhcy9FZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Home/NoEncontrado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Ob0VuY29udHJhZG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Shared/_LinksLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MaW5rc0xvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Shared/_NavegarPorMeses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19OYXZlZ2FyUG9yTWVzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Shared/_ReporteTransaccionesDetalladas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19SZXBvcnRlVHJhbnNhY2Npb25lc0RldGFsbGFkYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Shared/_ResumenMontos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19SZXN1bWVuTW9udG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/TiposCuentas/Borrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlwb3NDdWVudGFzL0JvcnJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/TiposCuentas/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlwb3NDdWVudGFzL0NyZWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/TiposCuentas/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlwb3NDdWVudGFzL0VkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/TiposCuentas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlwb3NDdWVudGFzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Transacciones/Calendario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY2Npb25lcy9DYWxlbmRhcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Transacciones/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY2Npb25lcy9DcmVhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Transacciones/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY2Npb25lcy9FZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Transacciones/ExcelReporte.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY2Npb25lcy9FeGNlbFJlcG9ydGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Transacciones/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY2Npb25lcy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Transacciones/Mensual.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY2Npb25lcy9NZW5zdWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Transacciones/Semanal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY2Npb25lcy9TZW1hbmFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Transacciones/_Submenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY2Npb25lcy9fU3VibWVudS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Usuarios/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpb3MvTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Usuarios/Registro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpb3MvUmVnaXN0cm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Usuarios/_layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpb3MvX2xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Cuentas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VlbnRhcy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-jux0ejq0s0
+
+[/home/jjhm/Desktop/jjhm/repos/projects/EMv2/ManejoPresupuesto/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-hk28mg7boz
