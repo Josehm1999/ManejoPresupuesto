@@ -272,7 +272,6 @@ namespace ManejoPresupuesto.Controllers
                 UseDefaultCredentials = false,
                 Port =  587,
                 EnableSsl = true,
-                Credentials = new NetworkCredential("josehm1999@gmail.com", "qcivoqibfaucixiw")
                 // DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory,
                 // PickupDirectoryLocation = @"/home/jjhm/Desktop/jjhm"
             });
