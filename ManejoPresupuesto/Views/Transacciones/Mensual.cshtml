@@ -1,29 +1,34 @@
 ﻿@model ReporteMensualViewModel
 
 @{
-    ViewData["Title"] = "Reporte Mensual";
-    int añoAnterior = Model.Año - 1;
-    int añoPosterior = Model.Año + 1;
-    var resumenMontos = new ResumenMontosViewModel()
-            {
-                Gastos = Model.Gastos,
-                Ingresos = Model.Ingresos,
-                Total = Model.Total
-            };
+ViewData["Title"] = "Reporte Mensual";
+int añoAnterior = Model.Año - 1;
+int añoPosterior = Model.Año + 1;
+var resumenMontos = new ResumenMontosViewModel()
+{
+Gastos = Model.Gastos,
+Ingresos = Model.Ingresos,
+Total = Model.Total
+};
 }
 
 <partial name="_Submenu" Model="SubMenuTransacciones.Mensual" />
 
-<h4>
-    Mostrando transacciones de 
-    <a asp-route-año="@añoAnterior" class="btn btn-secondary">
-        <i class="bi-chevron-left"></i>
-    </a> @Model.Año
-    <a asp-route-año="@añoPosterior" class="btn btn-secondary">
-        <i class="bi-chevron-right"></i>
-    </a>
-</h4>
 
+
+<section id="cta" class="bg-brightRed mb-3">
+    <!-- Flex Container -->
+    <div
+        class="container flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0">
+        <!-- Heading -->
+        <h2 class="text-5xl font-bold text-center text-white md:text-4xl  md:text-left">
+            Mostrando transacciones de <a asp-route-año="@añoAnterior" class="btn btn-secondary"> <i class="bi-chevron-left"></i> </a> @Model.Año
+            <a asp-route-año="@añoPosterior" class="btn btn-secondary">
+                <i class="bi-chevron-right"></i>
+            </a>
+            <div>
+            </div>
+</section>
 <partial name="_ResumenMontos" model="@resumenMontos" />
 
 <table class="table" style="font-size: 20px">
@@ -37,17 +42,16 @@
     <tbody>
         @foreach (var transaccionPorMes in Model.TransaccionesPorMes)
         {
-            <tr>
-                <td>
-                    <a style="text-decoration: none;" asp-action="Index"
-                    asp-route-año="@Model.Año" asp-route-mes="@transaccionPorMes.Mes"
-                    >
-                        @transaccionPorMes.FechaReferencia.ToString("MMM")
-                    </a>
-                </td>
-                <td class="activo" style="text-align: right">@transaccionPorMes.Ingreso.ToString("N")</td>
-                <td class="pasivo" style="text-align: right">@transaccionPorMes.Gasto.ToString("N")</td>
-            </tr>
+        <tr>
+            <td>
+                <a style="text-decoration: none;" asp-action="Index" asp-route-año="@Model.Año"
+                    asp-route-mes="@transaccionPorMes.Mes">
+                    @transaccionPorMes.FechaReferencia.ToString("MMM")
+                </a>
+            </td>
+            <td class="activo" style="text-align: right">@transaccionPorMes.Ingreso.ToString("N")</td>
+            <td class="pasivo" style="text-align: right">@transaccionPorMes.Gasto.ToString("N")</td>
+        </tr>
         }
     </tbody>
 </table>

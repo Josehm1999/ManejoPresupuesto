@@ -2,28 +2,36 @@
 @inject SignInManager<Usuario> SignInManager
 
 
-<div class="hidden md:flex space-x-6 items-center">
-    
     @if (SignInManager.IsSignedIn(User))
     {
-        <span >Hola, @User.Identity.Name</span>
-          
-      
+    <a class=" hover:text-darkGrayishBlue" asp-controller="Transacciones" asp-action="Index">Transacciones</a>
+    <a class="hover:text-darkGrayishBlue" asp-controller="Cuentas" asp-action="Index">Cuentas</a>
+    <a class="hover:text-darkGrayishBlue" asp-controller="TiposCuentas" asp-action="Index">Tipos Cuentas</a>
+    <a class="hover:text-darkGrayishBlue" asp-controller="Categorias" asp-action="Index">Categorias </a>
+    }
+    <div class="hidden md:flex space-x-6 items-center">
 
-   <form  asp-action="logout" asp-controller="usuarios">
-                <button type="submit" class="hidden md:block p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">
-                    Cerrar Sesión
-                </button>
-            </form>
-    }
-    else
-    {
-            <a asp-controller="usuarios" asp-action="Registro">
-                Registro
-            </a>
-            <a asp-controller="usuarios" asp-action="Login">
-                Login
-            </a>
-    }
-        
-</div>
+        @if (SignInManager.IsSignedIn(User))
+        {
+        <span>Hola, @User.Identity.Name</span>
+
+
+
+        <form asp-action="logout" asp-controller="usuarios">
+            <button type="submit"
+                class="hidden md:block p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">
+                Cerrar Sesión
+            </button>
+        </form>
+        }
+        else
+        {
+        <a asp-controller="usuarios" asp-action="Registro">
+            Registro
+        </a>
+        <a asp-controller="usuarios" asp-action="Login">
+            Login
+        </a>
+        }
+
+    </div>

@@ -18,16 +18,10 @@
 <body>
     <nav class="relative container mx-auto p-6">
         <div class="flex items-center justify-between">
-            <div class="pt-2">
+            <a asp-controller="Home" asp-action="Index">
                 <img src="~/img/logo.png" alt="" />
-            </div>
-
+            </a>
             <div class="hidden md:flex space-x-6 items-center">
-                <a class=" hover:text-darkGrayishBlue" asp-controller="Transacciones"
-                    asp-action="Index">Transacciones</a>
-                <a class="hover:text-darkGrayishBlue" asp-controller="Cuentas" asp-action="Index">Cuentas</a>
-                <a class="hover:text-darkGrayishBlue" asp-controller="TiposCuentas" asp-action="Index">TiposCuentas</a>
-                <a class="hover:text-darkGrayishBlue" asp-controller="Categorias" asp-action="Index">Categorias </a>
                 <partial name="_LinksLogin" />
             </div>
         </div>

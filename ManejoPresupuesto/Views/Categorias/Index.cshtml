@@ -1,26 +1,39 @@
 ﻿@model IEnumerable<Categoria>
 
-@{
+    @{
     ViewData["Title"] = "Categorías";
-}
+    }
 
-<h1>Categorías</h1>
-<h5>La categoría nos permite indicar en qué gastamos nuestro dinero, 
-    también, de dónde provienen nuestros ingresos.</h5>
 
-<a asp-action="Crear" class="btn btn-primary mb-3">Crear nuevo</a>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Acciones</th>
-            <th>Nombre</th>
-            <th>Tipo</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var categoria in Model)
-        {
+    <section id="cta" class="bg-brightRed">
+        <!-- Flex Container -->
+        <div
+            class="container flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0">
+            <!-- Heading -->
+            <h2 class="text-5xl font-bold text-center text-white md:text-4xl md:max-w-xl md:text-left">
+                Categorías
+            </h2>
+            <p class="md:text-3xl text-white" style="font-size: 1.2rem;">
+                La categoría nos permite indicar en qué gastamos nuestro dinero,
+                también, de dónde provienen nuestros ingresos. </p> <!-- Button -->
+            <div>
+                <a asp-action="Crear"
+                    class="p-3 px-6 pt-2 text-brightRed bg-white rounded-full shadow-2xl baseline hover:bg-gray-900">Crear
+                    nuevo</a>
+            </div>
+        </div>
+    </section>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Acciones</th>
+                <th>Nombre</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var categoria in Model)
+            {
             <tr>
                 <td>
                     <a class="btn btn-primary" asp-action="Editar" asp-route-id="@categoria.Id">Editar</a>
@@ -33,6 +46,6 @@
                     @categoria.TipoOperacionId.ToString()
                 </td>
             </tr>
-        }
-    </tbody>
-</table>
+            }
+        </tbody>
+    </table>

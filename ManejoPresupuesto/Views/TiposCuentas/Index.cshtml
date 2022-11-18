@@ -1,25 +1,37 @@
 ﻿@model IEnumerable<TipoCuenta>
 
-@{
+    @{
     ViewData["Title"] = "Tipos Cuentas";
-}
+    }
 
-<h1>Tipos de Cuentas</h1>
-<h5>El tipo de cuenta se refiere a cómo podemos agrupar cuentas. 
-    Ejemplos: Préstamos, tarjetas de crédito, etc.</h5>
-
-  <a asp-action="Crear" class="btn btn-primary mb-3">Crear nuevo</a>
-
-  <table class="table">
-      <thead>
-          <tr>
-              <th>Acciones</th>
-              <th>Nombre</th>
-          </tr>
-      </thead>
-      <tbody id="reordenable">
-        @foreach (var tipoCuenta in Model)
-        {
+    <section id="cta" class="bg-brightRed">
+        <!-- Flex Container -->
+        <div
+            class="container flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0">
+            <!-- Heading -->
+            <h2 class="text-5xl font-bold text-center text-white md:text-4xl md:max-w-xl md:text-left">
+               Tipo Cuentas
+            </h2>
+            <p class="md:text-3xl text-white" style="font-size: 1.2rem;">
+                El tipo de cuenta se refiere a cómo podemos agrupar cuentas.
+                Ejemplos: Préstamos, tarjetas de crédito, etc. </p> <!-- Button -->
+            <div>
+                <a asp-action="Crear"
+                    class="p-3 px-6 pt-2 text-brightRed bg-white rounded-full shadow-2xl baseline hover:bg-gray-900">Crear
+                    nuevo</a>
+            </div>
+        </div>
+    </section>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Acciones</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody id="reordenable">
+            @foreach (var tipoCuenta in Model)
+            {
             <tr>
                 <td>
                     <input type="hidden" value="@tipoCuenta.Id" class="ids" />
@@ -31,46 +43,46 @@
                 </td>
 
             </tr>
-        }
-    </tbody>
-  </table>
+            }
+        </tbody>
+    </table>
 
-  @section Scripts {
-      <script>
+    @section Scripts {
+    <script>
 
-          const urlOrdenar = '@Url.Action("ordenar")';
+        const urlOrdenar = '@Url.Action("ordenar")';
 
-          $(function(){
-              $("#reordenable").sortable({
-                  stop: async function(e, ui){
-                      await actualizarOrdenes();
-                  }
-              });
+        $(function () {
+            $("#reordenable").sortable({
+                stop: async function (e, ui) {
+                    await actualizarOrdenes();
+                }
+            });
 
-              async function actualizarOrdenes(){
-                  const ids = obtenerIdsDeElementos();
-                  await enviarIdsAlBackend(ids);
-              }
+            async function actualizarOrdenes() {
+                const ids = obtenerIdsDeElementos();
+                await enviarIdsAlBackend(ids);
+            }
 
-              function obtenerIdsDeElementos(){
-                  const ids = $(".ids").map(function(){
-                      return $(this).val();
-                  }).get();
+            function obtenerIdsDeElementos() {
+                const ids = $(".ids").map(function () {
+                    return $(this).val();
+                }).get();
 
-                  return ids;
-              }
+                return ids;
+            }
 
-              async function enviarIdsAlBackend(ids){
-                  var data = JSON.stringify(ids);
+            async function enviarIdsAlBackend(ids) {
+                var data = JSON.stringify(ids);
 
-                  await fetch(urlOrdenar, {
-                      method: 'POST',
-                      body: data,
-                      headers: {
-                          'Content-Type': 'application/json'
-                      }
-                  });
-              }
-          })
-      </script>
-  }
+                await fetch(urlOrdenar, {
+                    method: 'POST',
+                    body: data,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            }
+        })
+    </script>
+    }

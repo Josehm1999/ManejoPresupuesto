@@ -3,35 +3,32 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
+
 
 namespace ManejoPresupuesto.Controllers
 {
-    public class UsuariosController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+
+    public class APIUsuariosController : ControllerBase
     {
         private readonly UserManager<Usuario> userManager;
         private readonly SignInManager<Usuario> signInManager;
 
-        public UsuariosController(UserManager<Usuario> userManager,
+        public APIUsuariosController(UserManager<Usuario> userManager,
             SignInManager<Usuario> signInManager)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
         }
 
-        [AllowAnonymous]
-        public IActionResult Registro()
-        {
-            return View();
-        }
-
-        [HttpPost]
+        [HttpPost("~/registro")]
         [AllowAnonymous]
         public async Task<IActionResult> Registro(RegistroViewModel modelo)
         {
             if (!ModelState.IsValid)
             {
-                return View(modelo);
+                return BadRequest();
             }
 
             var usuario = new Usuario() { Email = modelo.Email };
@@ -41,7 +38,7 @@ namespace ManejoPresupuesto.Controllers
             if (resultado.Succeeded)
             {
                 await signInManager.SignInAsync(usuario, isPersistent: true);
-                return RedirectToAction("Index", "Transacciones");
+                return Ok();
             }
             else
             {
@@ -50,25 +47,18 @@ namespace ManejoPresupuesto.Controllers
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
 
-                return View(modelo);
+                return BadRequest(modelo);
             }
 
         }
 
-        [HttpGet]
-        [AllowAnonymous]
-        public IActionResult Login()
-        {
-            return View();
-        }
-
-        [HttpPost]
+        [HttpPost("~/login")]
         [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel modelo)
         {
             if (!ModelState.IsValid)
             {
-                return View(modelo);
+                return BadRequest();
             }
 
             var resultado = await signInManager.PasswordSignInAsync(modelo.Email,
@@ -76,20 +66,19 @@ namespace ManejoPresupuesto.Controllers
 
             if (resultado.Succeeded)
             {
-                return RedirectToAction("Index", "Transacciones");
+                return Ok();
             }
             else
             {
-                ModelState.AddModelError(string.Empty, "Nombre de usuario o password incorrecto.");
-                return View(modelo);
+                return BadRequest("Nombre de usuario o password incorrecto.");
             }
         }
 
-        [HttpPost]
+        [HttpPost("~/exit")]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
-            return RedirectToAction("Index", "Home");
+            return Ok();
         }
     }
 }

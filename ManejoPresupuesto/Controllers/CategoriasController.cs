@@ -1,9 +1,11 @@
 ﻿using ManejoPresupuesto.Models;
 using ManejoPresupuesto.Servicios;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ManejoPresupuesto.Controllers
 {
+
     public class CategoriasController: Controller
     {
         private readonly IRepositorioCategorias repositorioCategorias;
@@ -104,5 +106,6 @@ namespace ManejoPresupuesto.Controllers
             await repositorioCategorias.Borrar(id);
             return RedirectToAction("Index");
         }
+
     }
 }

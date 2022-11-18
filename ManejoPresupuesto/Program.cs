@@ -2,7 +2,7 @@ using ManejoPresupuesto.Models;
 using ManejoPresupuesto.Servicios;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,10 +13,12 @@ var politicaUsuariosAutenticados = new AuthorizationPolicyBuilder()
     .Build();
 
 
-builder.Services.AddControllersWithViews(opciones =>
-{
-    opciones.Filters.Add(new AuthorizeFilter(politicaUsuariosAutenticados));
-});
+builder.Services.AddControllersWithViews(
+//         opciones =>
+// {
+//     opciones.Filters.Add(new AuthorizeFilter(politicaUsuariosAutenticados));
+// }
+);
 builder.Services.AddTransient<IRepositorioTiposCuentas, RepositorioTiposCuentas>();
 builder.Services.AddTransient<IServicioUsuarios, ServicioUsuarios>();
 builder.Services.AddTransient<IRepositorioCuentas, RepositorioCuentas>();
@@ -45,7 +47,11 @@ builder.Services.AddAuthentication(options =>
 {
     opciones.LoginPath = "/usuarios/login";
 });
-
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v2", new OpenApiInfo { Title = "API_FROM_MVC", Version = "v2" });
+    c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -54,8 +60,14 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
-}
 
+}
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v2/swagger.json", "API_FROM_MVC");
+    c.RoutePrefix = string.Empty;
+});
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -65,8 +77,11 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Transacciones}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}");
+});
 
 app.Run();
